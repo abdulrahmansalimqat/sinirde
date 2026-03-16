@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقامرين المشاعر و الأهداف - الشخصية الحدية</title>
+    <meta name="description" content="موقع يجسد معاناة وتجربة الشخصية الحدية (BPD) بين النقيضين: الأبيض والأسود.">
+    <!-- Google Fonts: Cairo & Tajawal for Arabic, Inter for LTR, Vazirmatn for Persian -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@300;500;700&family=Inter:wght@300;500;700;900&family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="custom-cursor"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <h1 class="glitch" data-text="أبيض / أسود" data-i18n="glitch_text">أبيض / أسود</h1>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="logo" data-i18n="nav_logo">مقامر<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about" class="hover-underline" data-i18n="nav_borderline">الحدية</a></li>
+            <li><a href="#emotions" class="hover-underline" data-i18n="nav_emotions">المشاعر</a></li>
+            <li><a href="#goals" class="hover-underline" data-i18n="nav_goals">الأهداف</a></li>
+            <li><a href="blog.html" class="hover-underline" data-i18n="nav_blog">المدونة</a></li>
+            <li><a href="contact.html" class="hover-underline" data-i18n="nav_contact">اتصل بنا</a></li>
+            <li>
+                <select id="lang-switch" class="lang-switch">
+                    <option value="ar" data-i18n="lang_ar">العربية</option>
+                    <option value="en" data-i18n="lang_en">English</option>
+                    <option value="tr" data-i18n="lang_tr">Türkçe</option>
+                    <option value="es" data-i18n="lang_es">Español</option>
+                    <option value="ru" data-i18n="lang_ru">Русский</option>
+                    <option value="fa" data-i18n="lang_fa">فارسی</option>
+                </select>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero section-dark" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title reveal-text">
+                <span class="line" data-i18n="hero_line1">مقامرين</span>
+                <span class="line" data-i18n="hero_line2">المشاعر</span>
+                <span class="line italic-accent" data-i18n="hero_line3">و الأهداف</span>
+            </h1>
+            <p class="hero-subtitle reveal-text delay-1" data-i18n="hero_subtitle">حياة على حافة النقيضين. لا وسط، لا رمادي، فقط أقصى اليمين أو أقصى اليسار.</p>
+            <div class="scroll-indicator block-reveal">
+                <span data-i18n="scroll_discover">اكتشف المزيد</span>
+                <div class="line-down"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee Transition -->
+    <div class="marquee-container black-on-white">
+        <div class="marquee" aria-hidden="true">
+            <span data-i18n="marquee_1">كل شيء أو لا شيء</span>
+            <span class="dot">·</span>
+            <span data-i18n="marquee_2">حب مطلق أو كراهية عمياء</span>
+            <span class="dot">·</span>
+            <span data-i18n="marquee_3">مثالية أو انحطاط</span>
+            <span class="dot">·</span>
+            <span data-i18n="marquee_1">كل شيء أو لا شيء</span>
+            <span class="dot">·</span>
+            <span data-i18n="marquee_2">حب مطلق أو كراهية عمياء</span>
+            <span class="dot">·</span>
+            <span data-i18n="marquee_3">مثالية أو انحطاط</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about section-light" id="about">
+        <div class="container grid-2">
+            <div class="text-block">
+                <h2 class="section-title text-reveal" data-i18n="about_title">اضطراب الشخصية الحدية <br>(BPD)</h2>
+                <p class="section-desc fade-in-up" data-i18n="about_desc_1">ليس مجرد تقلبات مزاجية عابرة، بل هو اضطراب عميق في طريقة إدراك الذات والآخرين. العالم في عين "الحَدّي" هو عالم من التطرف العاطفي.</p>
+                <p class="section-desc fade-in-up delay-1" data-i18n="about_desc_2">هنا، المشاعر تحكم، والأهداف تتغير مع الرياح، والخوف من الهجر محرك أساسي لكل تصرف.</p>
+            </div>
+            <div class="visual-block invert-hover">
+                <div class="contrast-box">
+                    <h3 data-i18n="about_box">أنا / الآخر</h3>
+                    <div class="split-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotions Section -->
+    <section class="emotions section-dark" id="emotions">
+        <div class="container">
+            <h2 class="section-title text-reveal center" data-i18n="emotions_title">مقامر المشاعر</h2>
+            <div class="emotion-cards">
+                <div class="card fade-in-up">
+                    <h3 class="card-title" data-i18n="emotion_1_title">النشوة المتفجرة</h3>
+                    <p data-i18n="emotion_1_desc">في لحظة، كل شيء يبدو مثالياً، والحب يغمر الكون. شعور مفرط بالارتباط والمثالية تجاه شخص أو فكرة.</p>
+                </div>
+                <div class="card fade-in-up delay-1">
+                    <h3 class="card-title" data-i18n="emotion_2_title">السقوط الحر</h3>
+                    <p data-i18n="emotion_2_desc">فجأة، وبدون مقدمات منطقية أحياناً، يسقط كل شيء. المثالية تنقلب إلى ظلام دامس، والحب يتحول إلى غضب أو فراغ.</p>
+                </div>
+                <div class="card fade-in-up delay-2">
+                    <h3 class="card-title" data-i18n="emotion_3_title">الفراغ المزمن</h3>
+                    <p data-i18n="emotion_3_desc">حين تغيب العواصف، يحل فراغ مرعب. شعور بانعدام الوجود، كأن الروح ثقب أسود يبتلع كل محاولة للشعور.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section class="goals section-light" id="goals">
+        <div class="container grid-2-reverse">
+            <div class="text-block">
+                <h2 class="section-title text-reveal" data-i18n="goals_title">مقامر الأهداف</h2>
+                <p class="section-desc fade-in-up" data-i18n="goals_desc">شغف مفاجئ ومشتعل يتبعه انطفاء تام. التخلي عن مسار دراسي، مهنة، أو حلم في منتصف الطريق، ليس كسلاً، بل فقدان مفاجئ للمعنى.</p>
+                <div class="goal-timeline fade-in-up delay-1">
+                    <div class="timeline-item"><div class="dot"></div> <span data-i18n="timeline_1">شغف مطلق وبداية قوية.</span></div>
+                    <div class="timeline-item"><div class="dot"></div> <span data-i18n="timeline_2">شك واضطراب في الهوية.</span></div>
+                    <div class="timeline-item"><div class="dot"></div> <span data-i18n="timeline_3">تدمير ذاتي وانسحاب.</span></div>
+                    <div class="timeline-item"><div class="dot"></div> <span data-i18n="timeline_4">البحث عن هدف جديد.</span></div>
+                </div>
+            </div>
+            <div class="visual-block">
+                <div class="target-abstract" id="target-abstract">
+                    <!-- Abstract geometric representation of shifting targets -->
+                    <div class="circle c1"></div>
+                    <div class="circle c2"></div>
+                    <div class="circle c3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="conclusion section-dark">
+        <div class="container center">
+            <h2 class="huge-text fade-in-up" data-i18n="conclusion_title">بين النقيضين،<br>هناك مساحة للشفاء.</h2>
+            <p class="fade-in-up delay-1 mt-2" data-i18n="conclusion_desc">العلاج الجدلي السلوكي (DBT) والوعي يمنحان مساحة لتقبل الرمادي في عالم الأبيض والأسود.</p>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section section-dark">
+        <div class="container center">
+            <h2 class="huge-text fade-in-up" data-i18n="newsletter_title">اشترك في النشرة البريدية</h2>
+            <p class="fade-in-up delay-1 mt-2" data-i18n="newsletter_desc">كن أول من يعرف عن مقالاتنا وتجاربنا الجديدة.</p>
+            <form class="newsletter-form fade-in-up delay-2" onsubmit="event.preventDefault(); this.querySelector('.newsletter-success').style.display='block'; this.querySelector('input').value='';">
+                <div class="newsletter-input-group">
+                    <input type="email" required data-i18n-placeholder="newsletter_placeholder" placeholder="بريدك الإلكتروني">
+                    <button type="submit" data-i18n="newsletter_btn">اشترك الآن</button>
+                </div>
+                <p class="newsletter-success" style="display:none; margin-top:1rem; opacity:0.8;">✓</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer black-on-white">
+        <div class="container container-footer">
+            <div class="footer-logo" data-i18n="footer_logo">مقامرين المشاعر و الأهداف</div>
+            <p class="disclaimer" data-i18n="footer_disclaimer">هذا الموقع هو تجسيد فني وتوعوي وليس بديلاً عن الاستشارة الطبية.</p>
+            <div class="social-links">
+                <a href="#" data-i18n="footer_design">تصميم</a>
+                <a href="#" data-i18n="footer_hashtag">#الشخصية_الحدية</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

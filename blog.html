@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المدونة - مقامرين المشاعر و الأهداف</title>
+    <meta name="description" content="خواطر، مقالات، وتجارب من عالم الشخصية الحدية.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@300;500;700&family=Inter:wght@300;500;700;900&family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="section-light">
+    <div class="noise"></div>
+    <div class="custom-cursor"></div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" data-i18n="nav_logo" style="color: inherit; text-decoration: none;">مقامر<span>.</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="hover-underline" data-i18n="nav_home">الرئيسية</a></li>
+            <li><a href="blog.html" class="hover-underline active" data-i18n="nav_blog">المدونة</a></li>
+            <li><a href="contact.html" class="hover-underline" data-i18n="nav_contact">اتصل بنا</a></li>
+            <li>
+                <select id="lang-switch" class="lang-switch">
+                    <option value="ar" data-i18n="lang_ar">العربية</option>
+                    <option value="en" data-i18n="lang_en">English</option>
+                    <option value="tr" data-i18n="lang_tr">Türkçe</option>
+                    <option value="es" data-i18n="lang_es">Español</option>
+                    <option value="ru" data-i18n="lang_ru">Русский</option>
+                    <option value="fa" data-i18n="lang_fa">فارسی</option>
+                </select>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header-v2 section-light center" id="blog-home">
+        <div class="container container-large">
+            <div class="blog-header-number fade-in-up">01</div>
+            <h1 class="brutalist-title fade-in-up" data-i18n="blog_title">سجلات بالأبيض و الأسود</h1>
+            <p class="section-desc fade-in-up delay-1 mt-2" data-i18n="blog_desc" style="max-width: 600px; margin: 0 auto;">خواطر، مقالات، وتجارب من عالم الشخصية الحدية.</p>
+        </div>
+    </header>
+
+    <!-- Category Filter + Blog Grid -->
+    <section class="blog-content section-light pt-0">
+        <div class="container container-large">
+            <!-- Category Filter -->
+            <div class="category-filter fade-in-up delay-2" id="category-filter">
+                <button class="cat-btn active" data-cat="all" data-i18n="cat_all">الكل</button>
+                <button class="cat-btn" data-cat="personal" data-i18n="cat_personal">تجارب شخصية</button>
+                <button class="cat-btn" data-cat="story" data-i18n="cat_story">قصة حدية</button>
+                <button class="cat-btn" data-cat="scientific" data-i18n="cat_scientific">معلومات علمية</button>
+                <button class="cat-btn" data-cat="advice" data-i18n="cat_advice">نصائح</button>
+                <button class="cat-btn" data-cat="gray" data-i18n="cat_gray">رمادي</button>
+                <button class="cat-btn" data-cat="madness" data-i18n="cat_madness">جنون</button>
+                <button class="cat-btn" data-cat="love" data-i18n="cat_love">حب</button>
+            </div>
+
+            <!-- Blog Grid -->
+            <div id="blog-feed" class="blog-grid">
+                <!-- Posts will be loaded dynamically here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section section-dark">
+        <div class="container center">
+            <h2 class="huge-text fade-in-up" data-i18n="newsletter_title">اشترك في النشرة البريدية</h2>
+            <p class="fade-in-up delay-1 mt-2" data-i18n="newsletter_desc">كن أول من يعرف عن مقالاتنا وتجاربنا الجديدة.</p>
+            <form class="newsletter-form fade-in-up delay-2" onsubmit="event.preventDefault(); this.querySelector('.newsletter-success').style.display='block'; this.querySelector('input').value='';">
+                <div class="newsletter-input-group">
+                    <input type="email" required data-i18n-placeholder="newsletter_placeholder" placeholder="بريدك الإلكتروني">
+                    <button type="submit" data-i18n="newsletter_btn">اشترك الآن</button>
+                </div>
+                <p class="newsletter-success" style="display:none; margin-top:1rem; opacity:0.8;">✓</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer black-on-white">
+        <div class="container container-footer">
+            <div class="footer-logo" data-i18n="footer_logo">مقامرين المشاعر و الأهداف</div>
+            <p class="disclaimer" data-i18n="footer_disclaimer">هذا الموقع هو تجسيد فني وتوعوي وليس بديلاً عن الاستشارة الطبية.</p>
+            <div class="social-links">
+                <a href="#" data-i18n="footer_design">تصميم</a>
+                <a href="#" data-i18n="footer_hashtag">#الشخصية_الحدية</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

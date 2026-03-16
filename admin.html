@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - المدونة</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: var(--black); color: var(--white); cursor: auto; }
+        .admin-header { padding: 5rem 0 2rem; border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: 3rem; }
+        .form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
+        .form-group label { margin-bottom: 0.5rem; font-weight: 700; }
+        .form-group input, .form-group textarea {
+            background-color: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+            padding: 1rem;
+            font-family: var(--font-text);
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-width: 2px; }
+        .form-group textarea { resize: vertical; min-height: 200px; }
+        
+        .btn-submit {
+            background-color: var(--white);
+            color: var(--black);
+            border: none;
+            padding: 1rem 2rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 1rem;
+        }
+        .btn-submit:hover { transform: scale(1.05); }
+        .btn-danger { background-color: transparent; color: var(--white); border: 1px solid var(--white); margin-right: 1rem;}
+        .btn-danger:hover { background-color: darkred; color: white; border-color: darkred; }
+
+        .posts-table { width: 100%; border-collapse: collapse; margin-top: 3rem; }
+        .posts-table th, .posts-table td { border: 1px solid rgba(255,255,255,0.2); padding: 1rem; text-align: right; }
+        .posts-table th { font-family: var(--font-heading); background-color: rgba(255,255,255,0.05); }
+        .actions-cell { display: flex; gap: 1rem; }
+        .action-link { text-decoration: underline; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container admin-header">
+        <h1>لوحة تحكم المدونة</h1>
+        <p>إدارة المقالات المحفوظة في مساحة التخزين المحلية (Local Storage).</p>
+        <div style="margin-top: 1rem;">
+            <a href="blog.html" class="hover-underline">← العودة للمدونة</a>
+            <a href="index.html" class="hover-underline" style="margin-right: 2rem;">← العودة للرئيسية</a>
+        </div>
+    </div>
+
+    <div class="container grid-2" style="align-items: start;">
+        <!-- Form Area -->
+        <div class="form-area">
+            <h2 id="form-title" style="margin-bottom: 2rem;">إضافة مقال جديد</h2>
+            <form id="post-form">
+                <input type="hidden" id="post-id">
+                <div class="form-group">
+                    <label for="post-title">عنوان المقال</label>
+                    <input type="text" id="post-title" required placeholder="أدخل العنوان هنا...">
+                </div>
+                <div class="form-group">
+                    <label for="post-excerpt">مقتطف (وصف قصير)</label>
+                    <input type="text" id="post-excerpt" required placeholder="نبذة مختصرة تظهر في قائمة المقالات...">
+                </div>
+                <div class="form-group">
+                    <label for="post-content">المحتوى</label>
+                    <textarea id="post-content" required placeholder="اكتب محتوى المقال هنا... (يدعم نصوص بسيطة)"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-lang">لغة المقال</label>
+                    <select id="post-lang" style="background: transparent; color: var(--white); border: 1px solid var(--white); padding: 1rem; font-family: inherit; font-size: 1.1rem; outline: none; transition: border-color 0.3s;">
+                        <option value="ar" style="color: black;">العربية (AR)</option>
+                        <option value="en" style="color: black;">English (EN)</option>
+                        <option value="tr" style="color: black;">Türkçe (TR)</option>
+                        <option value="es" style="color: black;">Español (ES)</option>
+                        <option value="ru" style="color: black;">Русский (RU)</option>
+                        <option value="fa" style="color: black;">فارسی (FA)</option>
+                    </select>
+                </div>
+                <!-- Category Select -->
+                <div class="form-group">
+                    <label for="post-category">تصنيف المقال</label>
+                    <select id="post-category" style="background: transparent; color: var(--white); border: 1px solid var(--white); padding: 1rem; font-family: inherit; font-size: 1.1rem; outline: none; transition: border-color 0.3s;">
+                        <option value="personal" style="color: black;">تجارب شخصية</option>
+                        <option value="story" style="color: black;">قصة حدية</option>
+                        <option value="scientific" style="color: black;">معلومات علمية</option>
+                        <option value="advice" style="color: black;">نصائح</option>
+                        <option value="gray" style="color: black;">رمادي</option>
+                        <option value="madness" style="color: black;">جنون</option>
+                        <option value="love" style="color: black;">حب</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit" id="submit-btn" style="margin-top:2rem;">نشر المقال</button>
+                <button type="button" class="btn-submit btn-danger" id="cancel-btn" style="display:none;">إلغاء التعديل</button>
+            </form>
+        </div>
+
+        <!-- List Area -->
+        <div class="list-area">
+            <h2 style="margin-bottom: 2rem;">المقالات المنشورة</h2>
+            <table class="posts-table">
+                <thead>
+                    <tr>
+                        <th>العنوان</th>
+                        <th>التاريخ</th>
+                        <th>اللغة</th>
+                        <th>إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody id="posts-tbody">
+                    <!-- Posts populated by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
